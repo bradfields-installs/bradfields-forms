@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Form 1</h1>
-    <form action="https://formsubmit.co/YOUR_EMAIL@example.com" method="POST">
+    <form action="https://formsubmit.co/installs@bradfields.com" method="POST">
         <label for="name">Name:</label>
         <input type="text" id="name" name="name" required>
         <br>
