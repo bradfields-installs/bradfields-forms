@@ -50,17 +50,7 @@
         <label for="concerns">Additional Concerns:</label>
         <textarea id="concerns" name="concerns"></textarea><br><br>
 
-<script>
-    document.querySelector('form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevents the form's default action
-        fetch(this.action, {
-            method: this.method,
-            body: new FormData(this),
-        }).then(() => {
-            window.location.href = 'https://bradfields-installs.github.io/bradfields-forms/thank-you.html';
-        });
-    });
-</script>
+        <input type="hidden" name="_redirect" value="https://bradfields-installs.github.io/bradfields-forms">
 
         <button type="submit">Submit</button>
     </form>
