@@ -4,10 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMART Install Equipment Received Onsite</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("xG_sC2aFSjqf5olfn"); // Replace YOUR_USER_ID with your actual EmailJS User ID
+    })();
+    document.getElementById('installForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Collect form data
+        const formData = {
+            customerName: this.customerName.value,
+            contact: this.contact.value,
+            contactPhone: this.contactPhone.value,
+            arrivalTime: this.arrivalTime.value,
+            equipment: this.equipment.value,
+            roomNumbers: this.roomNumbers.value,
+            wallType: this.wallType.value,
+            asbestos: this.asbestos.value,
+            installLocation: this.installLocation.value,
+            existingFixtures: this.existingFixtures.value,
+            powerOutlet: this.powerOutlet.value,
+            pcDistance: this.pcDistance.value,
+            address: this.address.value,
+            concerns: this.concerns.value
+        };
+
+        // Send form data to EmailJS
+        emailjs.send("service_94ikr5d", "template_3quzgr8", formData)
+        .then((response) => {
+            console.log('SUCCESS!', response.status, response.text);
+            window.location.href = "https://bradfields-installs.github.io/bradfields-forms/thank-you.html"; // Redirect to Thank You page
+        }, (error) => {
+            console.log('FAILED...', error);
+            alert('Form submission failed. Please try again later.');
+        });
+    });
+</script>
+    
 </head>
 <body>
     <h1>Installation Survey - Equipment Onsite</h1>
-    <form action="https://formspree.io/f/xvgokepr" method="POST">
+    <form id="installForm">
+        
         <input type="hidden" name="_replyto" value="installs@bradfields.com">
 
         <label for="customerName">Customer Name:</label>
