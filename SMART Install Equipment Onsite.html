@@ -31,7 +31,12 @@
                 address: this.address.value,
                 concerns: this.concerns.value
             };
-
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("22_gz5VmoMZyx76R3"); // Use your updated public key here
+   })();
+    
             // Send form data to EmailJS
             emailjs.send("service_94ikr5d", "template_3quzgr8", formData)
             .then((response) => {
@@ -95,13 +100,5 @@
 
         <button type="submit">Submit</button>
     </form>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-   (function(){
-      emailjs.init("22_gz5VmoMZyx76R3"); // Use your updated public key here
-   })();
-</script>
-
 </body>
 </html>
