@@ -1,0 +1,6 @@
+/* Logo Styling */
+.logo {
+    display: block;
+    max-width: 200px; /* Adjust size as needed */
+    margin: 0 auto 20px; /* Center and add spacing below */
+}
