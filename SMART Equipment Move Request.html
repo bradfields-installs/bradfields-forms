@@ -4,10 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SMART Equipment Move Request</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+            // Initialize EmailJS
+            emailjs.init("22_gz5VmoMZyx76R3"); // Use your updated public key here
+
+            // Form submission handler
+            document.getElementById('moveForm').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                // Collect form data
+                const formData = {
+                    customerName: this.customerName.value,
+                    contact: this.contact.value,
+                    contactPhone: this.contactPhone.value,
+                    arrivalTime: this.arrivalTime.value,
+                    roomNumbersMove: this.roomNumbersMove.value,
+                    equipmentMove: this.equipmentMove.value,
+                    wallType: this.wallType.value,
+                    asbestos: this.asbestos.value,
+                    newLocation: this.newLocation.value,
+                    existingFixtures: this.existingFixtures.value,
+                    powerOutlet: this.powerOutlet.value,
+                    pcDistance: this.pcDistance.value,
+                    address: this.address.value,
+                    concerns: this.concerns.value
+                };
+
+                // Send form data to EmailJS
+                emailjs.send("service_94ikr5d", "template_3quzgr8", formData)
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    window.location.href = "https://bradfields-installs.github.io/bradfields-forms/thank-you.html"; // Redirect to Thank You page
+                }, (error) => {
+                    console.error('FAILED...', error);
+                    alert('Form submission failed. Please try again later.');
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Equipment Move Request</h1>
-    <form action="https://formsubmit.co/installs@bradfields.com" method="POST">
+    <form id="moveForm">
+        
+        <input type="hidden" name="_replyto" value="installs@bradfields.com">
+
         <label for="customerName">Customer Name:</label>
         <input type="text" id="customerName" name="customerName" required><br><br>
 
@@ -32,8 +75,8 @@
         <label for="asbestos">Aware of Asbestos?</label>
         <input type="text" id="asbestos" name="asbestos"><br><br>
 
-        <label for="installLocation">New Location and Height Requirements:</label>
-        <textarea id="installLocation" name="installLocation" required></textarea><br><br>
+        <label for="newLocation">New Location and Height Requirements:</label>
+        <textarea id="newLocation" name="newLocation" required></textarea><br><br>
 
         <label for="existingFixtures">Existing Fixtures to Remove:</label>
         <textarea id="existingFixtures" name="existingFixtures"></textarea><br><br>
@@ -50,10 +93,7 @@
         <label for="concerns">Additional Concerns:</label>
         <textarea id="concerns" name="concerns"></textarea><br><br>
 
-        <input type="hidden" name="_redirect" value="https://bradfields-installs.github.io/bradfields-forms">
-
         <button type="submit">Submit</button>
     </form>
-
 </body>
 </html>
