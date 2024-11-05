@@ -8,23 +8,25 @@
     <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function() {
             // Initialize EmailJS
-            emailjs.init("22_gz5VmoMZyx76R3"); // Use your updated public key here
+            emailjs.init("22_gz5VmoMZyx76R3");
 
             // Form submission handler
             document.getElementById('moveForm').addEventListener('submit', function(event) {
                 event.preventDefault(); // Prevent default form submission
 
-                // Collect form data
+                // Collect form data, including both new and existing template variables
                 const formData = {
                     customerName: this.customerName.value,
                     contact: this.contact.value,
                     contactPhone: this.contactPhone.value,
                     arrivalTime: this.arrivalTime.value,
-                    roomNumbers: this.roomNumbers.value, // Updated to match HTML ID
-                    equipment: this.equipment.value, // Updated to match HTML ID
+                    roomNumbers: this.roomNumbers.value,            // For {{roomNumbers}}
+                    roomNumbersMove: this.roomNumbers.value,       // For {{roomNumbersMove}}
+                    equipment: this.equipment.value,               // For {{equipment}}
+                    equipmentMove: this.equipment.value,           // For {{equipmentMove}}
                     wallType: this.wallType.value,
                     asbestos: this.asbestos.value,
-                    newLocation: this.newLocation.value,
+                    newLocation: this.newLocation.value,           // For {{newLocation}}
                     existingFixtures: this.existingFixtures.value,
                     powerOutlet: this.powerOutlet.value,
                     pcDistance: this.pcDistance.value,
