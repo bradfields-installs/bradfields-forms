@@ -31,10 +31,13 @@
                     pcDistance: this.pcDistance.value,
                     address: this.address.value,
                     concerns: this.concerns.value
-                    networkWireless: this.networkWireless.value,
+
+                    // New fields
+                    wirelessNetwork: this.wirelessNetwork.value,
                     networkSSID: this.networkSSID.value,
                     networkPassword: this.networkPassword.value,
                     specialRequirements: this.specialRequirements.value
+
                 };
 
                 // Send form data to EmailJS
@@ -75,11 +78,11 @@
         <label for="equipment">Equipment Delivered (e.g., SMART panel, projector, etc.):</label>
         <textarea id="equipment" name="equipment" required></textarea><br><br>
 
-        <label for="networkWireless">Will the SMART board be on a wireless network?</label>
-        <select id="networkWireless" name="networkWireless" required>
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
-        </select><br><br>
+        <label for="wirelessNetwork">Will the SMART board be on a wireless network?</label>
+<select id="wirelessNetwork" name="wirelessNetwork" required>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+</select><br><br>
 
         <label for="networkSSID">If so, please provide the SSID and Password for that network:</label>
         <input type="text" id="networkSSID" name="networkSSID" placeholder="SSID" /><br><br>
