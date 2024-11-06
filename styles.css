@@ -176,13 +176,14 @@ footer {
 }
 
 /* Background Accent Shapes */
-.shape1, .shape2 {
+.shape1, .shape2, .shape3, .shape4 {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.2;
-    z-index: -1; /* Ensure shapes stay behind content */
+    opacity: 0.15;
+    z-index: -1; /* Keeps shapes behind content */
 }
 
+/* Top-left red circle */
 .shape1 {
     width: 200px;
     height: 200px;
@@ -191,10 +192,29 @@ footer {
     left: -50px;
 }
 
+/* Bottom-right pink circle */
 .shape2 {
     width: 150px;
     height: 150px;
     background: #ffcdd2;
     bottom: -50px;
     right: -50px;
+}
+
+/* Top-right small circle */
+.shape3 {
+    width: 100px;
+    height: 100px;
+    background: #d32f2f;
+    top: 10%;
+    right: 15%;
+}
+
+/* Bottom-left small circle */
+.shape4 {
+    width: 120px;
+    height: 120px;
+    background: #ffcdd2;
+    bottom: 15%;
+    left: 10%;
 }
