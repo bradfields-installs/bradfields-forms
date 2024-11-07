@@ -179,42 +179,43 @@ footer {
 .shape1, .shape2, .shape3, .shape4 {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.15;
-    z-index: -1; /* Keeps shapes behind content */
+    z-index: -1;
+    opacity: 0.3; /* Increased opacity for prominence */
 }
 
-/* Top-left red circle */
+/* Top-left larger red gradient circle */
 .shape1 {
-    width: 200px;
-    height: 200px;
-    background: #d32f2f;
-    top: -50px;
-    left: -50px;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, #d32f2f, #b71c1c);
+    top: -60px;
+    left: -60px;
 }
 
-/* Bottom-right pink circle */
+/* Bottom-right larger pink gradient circle */
 .shape2 {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, #ffcdd2, #e57373);
+    bottom: -60px;
+    right: -60px;
+}
+
+/* Top-right small red gradient circle */
+.shape3 {
     width: 150px;
     height: 150px;
-    background: #ffcdd2;
-    bottom: -50px;
-    right: -50px;
-}
-
-/* Top-right small circle */
-.shape3 {
-    width: 100px;
-    height: 100px;
-    background: #d32f2f;
+    background: radial-gradient(circle, #d32f2f, #b71c1c);
     top: 10%;
-    right: 15%;
+    right: 12%;
 }
 
-/* Bottom-left small circle */
+/* Bottom-left small pink gradient circle */
 .shape4 {
-    width: 120px;
-    height: 120px;
-    background: #ffcdd2;
-    bottom: 15%;
-    left: 10%;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, #ffcdd2, #e57373);
+    bottom: 12%;
+    left: 8%;
 }
+
