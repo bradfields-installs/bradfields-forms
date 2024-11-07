@@ -20,6 +20,17 @@ body {
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
     padding: 30px;
     margin: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Logo and Header */
@@ -86,14 +97,6 @@ textarea {
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-input[type="text"]:focus,
-input[type="tel"]:focus,
-textarea:focus {
-    border-color: #d32f2f;
-    box-shadow: 0 0 5px rgba(211, 47, 47, 0.3);
-    outline: none;
-}
-
 button[type="submit"] {
     padding: 12px 20px;
     margin-top: 20px;
@@ -103,11 +106,12 @@ button[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s ease;
 }
 
 button[type="submit"]:hover {
     background-color: #b71c1c;
+    box-shadow: 0px 8px 15px rgba(183, 28, 28, 0.3);
     transform: scale(1.05);
 }
 
@@ -180,7 +184,8 @@ footer {
     position: absolute;
     border-radius: 50%;
     z-index: -1;
-    opacity: 0.3; /* Increased opacity for prominence */
+    opacity: 0.3;
+    animation: float 5s ease-in-out infinite;
 }
 
 /* Top-left larger red gradient circle */
@@ -219,3 +224,12 @@ footer {
     left: 8%;
 }
 
+/* Floating animation for background shapes */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
